@@ -14,9 +14,10 @@ func hs(a string) string {
 	return "snjc"
 }
 
-const algorithmFunc map[string]func(string) {
-	"HS256": hs
+var algorithmFunc = map[string]func(string) string{
+	"HS256": hs,
 }
+
 // header.payload.signature
 
 func encodeHeader(options Header) (string, error) {
